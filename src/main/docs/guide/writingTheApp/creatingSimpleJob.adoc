@@ -1,0 +1,41 @@
+Create a file and add the following:
+
+[source, java]
+.src/main/java/example/micronaut/HelloWorldJob.java
+----
+include::{sourceDir}/src/main/java/example/micronaut/HelloWorldJob.java[]
+----
+
+<1> To register a Singleton in Micronaut's application context annotate your class with `javax.inject.Singleton`
+<2> Inject a Logger.
+<3> Create trigger every 10 seconds
+<4> Create another trigger every 45 seconds with an initial delay of 5 seconds (5000 millis)
+
+&nbsp;
+
+Now start the application:
+
+[source, bash]
+----
+./gradlew run
+----
+
+And after a few seconds you will see the following output:
+
+[source, bash]
+---
+... Simple Job every 10 seconds :15/5/2018 12:48:02 <1>
+... Simple Job every 45 seconds :15/5/2018 12:48:07 <2>
+... Simple Job every 10 seconds :15/5/2018 12:48:12 <3>
+... Simple Job every 10 seconds :15/5/2018 12:48:22
+... Simple Job every 10 seconds :15/5/2018 12:48:32
+... Simple Job every 10 seconds :15/5/2018 12:48:42
+... Simple Job every 45 seconds :15/5/2018 12:48:52 <4>
+... Simple Job every 10 seconds :15/5/2018 12:48:52
+
+---
+
+<1> First execution of 10 seconds job just after the application starts
+<2> The 45 seconds job just starts 5 seconds after the app starts
+<3> Second execution of 10 seconds job just 10 seconds after the first execution
+<4> Second execution of 45 seconds job just 45 seconds after the first execution

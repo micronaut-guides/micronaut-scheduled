@@ -4,5 +4,9 @@ gettingStarted:
   howto: How to complete the guide
 writingTheApp:
   title: Writing the Application
-runningTheApp:
-  title: Running the Application
+  logger: Set log level INFO for package demo
+  creatingSimpleJob: Creating a Job
+  businessLogicInServices: Business logic in dedicated Use Cases
+  schedulingAJobManually: Scheduling a Job Manually
+summary:
+  title: Summary

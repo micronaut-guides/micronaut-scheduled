@@ -1,0 +1,45 @@
+Imagine the following scenario. You want to send every user an email 2 hours after they registered into your app. You want to ask him about his experiences during this first interaction with your application.
+
+For this guide, we are going to schedule a Job to trigger after one minute.
+
+To test it out, we are going to call twice a new use case named `RegisterUseCase` when the app starts.
+
+Modify `Application`:
+
+[source, java]
+.src/main/java/example/micronaut/Application.java
+----
+include::{sourceDir}/src/main/java/example/micronaut/Application.java[]
+----
+
+<1> Annotate `Application.java` with `@Singleton` to register it in the application context.
+<2> Listen to the event `ServerStartupEvent`
+<3> Constructor injection of `RegisterService`
+<4> `onApplicationEvent` is invoked when the app starts.
+
+&nbsp;
+
+As you see in the previous example, subscribing to an event is as easy as implementing `ApplicationEventListener`.
+
+Create `RegisterService.java`
+
+[source, java]
+.src/main/java/example/micronaut/RegisterUseCase.java
+----
+include::{sourceDir}/src/main/java/example/micronaut/RegisterUseCase.java[]
+----
+
+<1> Constructor injection of `EmailUseCase`
+<2> Inject the `TaskScheduler` bean
+<3> Create a `Runnable` task.
+<4> Schedule the task to run a minute from now.
+
+If you execute the above code you will see the Job being executed one minute after we schedule it and with the supplied email address.
+
+[source, bash]
+----
+INFO  example.micronaut.RegisterUseCase - saving harry@micronaut.example at 15/5/2018 06:25:14
+INFO  example.micronaut.RegisterUseCase - saving ron@micronaut.example at 15/5/2018 06:25:34
+INFO  example.micronaut.EmailUseCase - Sending email to harry@micronaut.example : Welcome to Micronaut at 15/5/2018 06:26:14
+INFO  example.micronaut.EmailUseCase - Sending email to ron@micronaut.example : Welcome to Micronaut at 15/5/2018 06:26:34
+----

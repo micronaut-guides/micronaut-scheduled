@@ -1,0 +1,2 @@
+During this guide, we learned how to configure Jobs using the `@Scheduled` annotation using fixedDelay, initialDelay,
+and cron as well as manually configuring jobs with a `TaskScheduler` and tasks.
