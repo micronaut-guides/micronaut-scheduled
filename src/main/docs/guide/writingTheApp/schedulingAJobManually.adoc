@@ -7,9 +7,9 @@ To test it out, we are going to call twice a new use case named `RegisterUseCase
 Modify `Application`:
 
 [source, java]
-.src/main/java/example/micronaut/Application.java
+.src/main/java/example/Application.java
 ----
-include::{sourceDir}/src/main/java/example/micronaut/Application.java[]
+include::{sourceDir}/src/main/java/example/Application.java[]
 ----
 
 <1> Annotate `Application.java` with `@Singleton` to register it in the application context.
@@ -21,7 +21,16 @@ include::{sourceDir}/src/main/java/example/micronaut/Application.java[]
 
 As you see in the previous example, subscribing to an event is as easy as implementing `ApplicationEventListener`.
 
-Create `RegisterService.java`
+
+Create a runnable task `EmailTask.java`
+
+[source, java]
+.src/main/java/example/micronaut/EmailTask.java
+----
+include::{sourceDir}/src/main/java/example/micronaut/EmailTask.java[]
+----
+
+Create `RegisterService.java` which schedules the previous task.
 
 [source, java]
 .src/main/java/example/micronaut/RegisterUseCase.java

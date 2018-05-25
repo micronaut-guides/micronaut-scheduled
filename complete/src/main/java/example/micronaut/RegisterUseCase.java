@@ -25,12 +25,12 @@ public class RegisterUseCase {
         this.taskScheduler = taskScheduler;
     }
 
-    void register(String email) {
+    public void register(String email) {
         LOG.info("saving {} at {}", email, new SimpleDateFormat("dd/M/yyyy hh:mm:ss").format(new Date()));
         scheduleFollowupEmail(email, "Welcome to Micronaut");
     }
 
-    void scheduleFollowupEmail(String email, String message) {
+    private void scheduleFollowupEmail(String email, String message) {
         EmailTask task = new EmailTask(emailUseCase, email, message); // <3>
         taskScheduler.schedule(Duration.ofMinutes(1), task);  // <4>
     }

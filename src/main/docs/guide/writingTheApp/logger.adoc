@@ -13,4 +13,4 @@ include::{sourceDir}/src/main/resources/logback.xml[tag=logger]
 </configuration>
 ----
 
-The above line configures a logger for package `grails.micronaut` with log level INFO which uses the STDOUT appender and with adaptivity set to false.
+The above line configures a logger for package `example.micronaut` with log level INFO.

@@ -1,5 +1,6 @@
-package example.micronaut;
+package example;
 
+import example.micronaut.RegisterUseCase;
 import io.micronaut.context.event.ApplicationEventListener;
 import io.micronaut.runtime.Micronaut;
 import io.micronaut.runtime.server.event.ServerStartupEvent;
