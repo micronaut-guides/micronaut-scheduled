@@ -14,7 +14,7 @@ include::{sourceDir}/src/main/java/example/Application.java[]
 
 <1> Annotate `Application.java` with `@Singleton` to register it in the application context.
 <2> Listen to the event `ServerStartupEvent`
-<3> Constructor injection of `RegisterService`
+<3> Constructor injection of `RegisterUseCase`
 <4> `onApplicationEvent` is invoked when the app starts.
 
 &nbsp;
@@ -30,7 +30,7 @@ Create a runnable task `EmailTask.java`
 include::{sourceDir}/src/main/java/example/micronaut/EmailTask.java[]
 ----
 
-Create `RegisterService.java` which schedules the previous task.
+Create `RegisterUseCase.java` which schedules the previous task.
 
 [source, java]
 .src/main/java/example/micronaut/RegisterUseCase.java
