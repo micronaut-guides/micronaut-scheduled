@@ -1,4 +1,4 @@
-Although the previous example is valid, usually you don't want to put your business logic in a Job. A better approach is to create an additional bean which the `Job` invokes. This approach decouples your business logic from the scheduling logic. Moreover, it facilities testing and maintenance. Let’s see an example:
+Although the previous example is valid, usually you don't want to put your business logic in a Job. A better approach is to create an additional bean which the `Job` invokes. This approach decouples your business logic from the scheduling logic. Moreover, it facilitates testing and maintenance. Let’s see an example:
 
 Create the following use case:
 
