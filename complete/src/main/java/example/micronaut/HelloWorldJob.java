@@ -14,11 +14,11 @@ public class HelloWorldJob {
 
     @Scheduled(fixedDelay = "10s") // <3>
     void executeEveryTen() {
-        LOG.info("Simple Job every 10 seconds :{}", new SimpleDateFormat("dd/M/yyyy hh:mm:ss").format(new Date()));
+        LOG.info("Simple Job every 10 seconds: {}", new SimpleDateFormat("dd/M/yyyy hh:mm:ss").format(new Date()));
     }
 
     @Scheduled(fixedDelay = "45s", initialDelay = "5s") // <4>
     void executeEveryFourtyFive() {
-        LOG.info("Simple Job every 45 seconds :{}", new SimpleDateFormat("dd/M/yyyy hh:mm:ss").format(new Date()));
+        LOG.info("Simple Job every 45 seconds: {}", new SimpleDateFormat("dd/M/yyyy hh:mm:ss").format(new Date()));
     }
 }
