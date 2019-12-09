@@ -1,0 +1,1 @@
+include::{commondir}/common-graal-setup.adoc[]
