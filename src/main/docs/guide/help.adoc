@@ -1,1 +1,1 @@
-include::{commondir}/common-helpWithGrails.adoc[]
+include::{commondir}/common-helpWithMicronaut.adoc[]
