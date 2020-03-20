@@ -7,9 +7,9 @@ To test it out, we are going to call twice a new use case named `RegisterUseCase
 Modify `Application`:
 
 [source, java]
-.src/main/java/example/Application.java
+.src/main/java/example/micronaut/Application.java
 ----
-include::{sourceDir}/src/main/java/example/Application.java[]
+include::{sourceDir}/src/main/java/example/micronaut/Application.java[]
 ----
 
 <1> Annotate `Application.java` with `@Singleton` to register it in the application context.
