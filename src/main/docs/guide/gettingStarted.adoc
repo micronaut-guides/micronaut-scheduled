@@ -1,3 +1,5 @@
+include::{commondir}/common-micronautonex.adoc[]
+
 Nowadays it is pretty usual to have some kind of cron or scheduled task that needs to run every midnight, every hour, a few times a week,...
 
 In this guide you will learn how to use Micronaut native capabilities to schedule periodic tasks inside a Micronaut microservice.
